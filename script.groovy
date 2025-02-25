@@ -8,7 +8,7 @@ def buildImage() {
     withCredentials([usernamePassword(credentialsId: 'dockerhub_credential', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
         sh 'docker build -t ebonje/demo-app:jma-2.0 .'
         sh "echo $PASS | docker login -u $USER --password-stdin"
-        sh 'docker push ebonje/demo-app:jma-2.0'
+        sh 'docker push mutaha1/demo-app:jma-2.0'
     }
 } 
 
